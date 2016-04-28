@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.dev.js --hot --progress --inline --watch --host 0.0.0.0 --port 9580"
   },
   "author": "Sergio Rafael Gianazza <sgianazza@gmail.com> (http://softwarepsychonaut.com/)",
   "license": "ISC",
