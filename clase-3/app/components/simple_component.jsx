@@ -1,32 +1,35 @@
 import React, { Component } from 'react';
+import CounterLabel from './counter_label';
+import CounterModifier from './counter_modifier';
 
 export default class SimpleComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showText: true
+      value: 0
     };
   }
 
-  renderText() {
-    if(this.state.showText) {
-      return (<p>Texto que aparece y desaparece</p>);
-    } else {
-      return null;
-    }
-  }
-
-  handleToggleText() {
+  handleCounterIncrease() {
     this.setState({
-      showText: !this.state.showText
+      value: ++this.state.value
     });
   }
-  
+
+  handleCounterDecrease() {
+    this.setState({
+      value: --this.state.value
+    });
+  }
+
   render() {
     return(
       <div>
-        {this.renderText()}
-        <button onClick={this.handleToggleText.bind(this)}>Toggle Text</button>
+        <CounterLabel value={this.state.value} />
+        <CounterModifier
+          onIncrease={this.handleCounterIncrease.bind(this)}
+          onDecrease={this.handleCounterDecrease.bind(this)}
+        />
       </div>
     );
   }
