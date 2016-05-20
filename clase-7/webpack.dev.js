@@ -5,7 +5,7 @@ const autoprefixer          = require('autoprefixer');
 
 const webpackConfig = {
   entry: {
-    app: './app/index.js'
+    app: ['babel-polyfill', './app/index.js']
   },
   devServer: {
     contentBase: './public',

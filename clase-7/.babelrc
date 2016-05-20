@@ -8,6 +8,7 @@
     "development": {
       "plugins": [
         "transform-class-properties",
+        "transform-regenerator",
         ["react-transform", {
           "transforms": [{
             "transform": "react-transform-hmr",

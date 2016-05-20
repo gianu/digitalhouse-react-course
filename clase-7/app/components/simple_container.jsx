@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { addNumber, subtractNumber } from '../actions';
 import SimpleComponent from './simple_component';
 
 const mapStateToProps = (state) => {
@@ -23,10 +22,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAddNumber: (number) => {
-      dispatch(addNumber(number));
+      dispatch({ type: 'NUMBER_ADD_BEGIN', payload: number });
     },
     onSubtractNumber: (number) => {
-      dispatch(subtractNumber(number));
+      dispatch({ type: 'NUMBER_SUBTRACT_BEGIN', payload: number });
     }
   };
 }
